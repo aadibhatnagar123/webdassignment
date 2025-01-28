@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen Fan Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://wallpaperaccess.com/full/8675743.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: rgb(249, 249, 249);
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(29, 151, 221, 0.536));
+            border-bottom: 0.6px solid rgb(229, 20, 20);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 3rem;
+            font-style: italic;
+            color: rgb(230, 30, 26);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        nav a {
+            text-decoration: none;
+            color: rgb(250, 250, 250);
+            font-size: 1.3rem;
+            padding: 5px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            color: rgb(5, 42, 66);
+            background-color: yellow;
+        }
+        nav .menu {
+            position: relative;
+        }
+        nav .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(5, 42, 66, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav .menu:hover .dropdown {
+            display: block;
+        }
+        nav .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1.1rem;
+        }
+        nav .dropdown a:hover {
+            background-color: rgb(212, 212, 15);
+            color: black;
+        }
+        main {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        main h2 {
+            font-size: 2.5rem;
+            font-family: cursive;
+            margin-bottom: 20px;
+        }
+        main p {
+            font-size: 1.2rem;
+        }
+        .character-section {
+            padding: 50px 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .character-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .character-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+        .character-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 20px;
+        }
+        footer h3 {
+            font-size: 1.5rem;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jujutsu Kaisen</h1>
+        <nav>
+            <div class="menu">
+                <a href="#">Major Plots</a>
+                <div class="dropdown">
+                    <a href="#">Plot 1</a>
+                    <a href="#">Plot 2</a>
+                    <a href="#">Plot 3</a>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="#">Iconic Scenes</a>
+                <div class="dropdown">
+                    <a href="#">Scene 1</a>
+                    <a href="#">Scene 2</a>
+                    <a href="#">Scene 3</a>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="#">Chapterwise Summary</a>
+                <div class="dropdown">
+                    <a href="#">Chapter 1</a>
+                    <a href="#">Chapter 2</a>
+                    <a href="#">Chapter 3</a>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="#">Twists</a>
+                <div class="dropdown">
+                    <a href="#">Twist 1</a>
+                    <a href="#">Twist 2</a>
+                    <a href="#">Twist 3</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome to the Ultimate Jujutsu Kaisen Fan Website</h2>
+        <p style="margin-bottom: 400px;">Explore the world of sorcerers, cursed spirits, and the unforgettable moments that make Jujutsu Kaisen a masterpiece.</p>
+    </main>
+    <section class="character-section">
+        <h2>Characters</h2>
+        <div class="characters">
+            <div class="character-card">
+                <img src="https://wallpapersden.com/yuji-itadori-hd-jujutsu-kaisen-art-wallpaper/" alt="Yuji Itadori">
+                <h3>Yuji Itadori</h3>
+                <p>The protagonist with immense physical strength and a kind heart.</p>
+            </div>
+            <div class="character-card">
+                <img src="https://www.whatspaper.com/4k-satoru-gojo-wallpaper-6/" alt="Satoru Gojo">
+                <h3>Satoru Gojo</h3>
+                <p>The most powerful Jujutsu Sorcerer.</p>
+            </div>
+            <div class="character-card">
+                <img src="https://jujutsu-kaisen.fandom.com/wiki/Category%3AMegumi_Fushiguro_Images" alt="Megumi Fushiguro">
+                <h3>Megumi Fushiguro</h3>
+                <p>A skilled sorcerer who uses Shikigami techniques.</p>
+            </div>
+            <div class="character-card">
+                <img src="https://jujutsu-kaisen.fandom.com/es/wiki/Nobara_Kugisaki" alt="Nobara Kugisaki">
+                <h3>Nobara Kugisaki</h3>
+                <p>A strong-willed sorcerer with a unique hammer-and-nails fighting style.</p>
+            </div>
+            <div class="character-card">
+                <img src="https://wallpaperaccess.com/ryomen-sukuna" alt="Ryomen Sukuna">
+                <h3>Ryomen Sukuna</h3>
+                <p>The King of Curses, a fearsome and ancient spirit.</p>
+            </div>
+            <div class="character-card">
+                <img src="https://jujutsu-kaisen.fandom.com/wiki/Category%3AMaki_Zenin_Images" alt="Maki Zenin">
+                <h3>Maki Zenin</h3>
+                <p>A non-sorcerer who defies her clan and wields powerful cursed tools.</p>
+            </div>
+            <div class="character-card">
+                <img src="https://jujutsu-kaisen.fandom.com/wiki/Category%3APanda_Images" alt="Panda">
+                <h3>Panda</h3>
+                <p>An adorable but incredibly strong Cursed Corpse.</p>
+            </div>
+            <div class="character-card">
+                <img src="https://jujutsu-kaisen.fandom.com/wiki/Category%3AToge_Inumaki_Images" alt="Toge Inumaki">
+                <h3>Toge Inumaki</h3>
+                <p>A sorcerer who uses cursed speech to command others.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h3>Contact Us</h3>
+        <p>Email: contact@jujutsukaisenfans.com</p>
+        <p>Subscribe to our newsletter for updates!</p>
+    </footer>
+</body>
+</html>
