@@ -1,113 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jujutsu Kaisen Fan Website</title>
     <style>
-        body{
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('https://images5.alphacoders.com/114/1141137.jpg');
-                background-size: cover;
-            background-attachment: fixed;
-                color: rgb(248, 249, 249);
-            overflow-x: hidden;
+            padding: 0;
         }
-        header{
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://wallpapercave.com/wp/wp8927829.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: rgb(248, 249, 249);
+            min-height: 100vh;
+        }
+        
+        header {
             display: flex;
-                justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             padding: 20px;
             font-family: 'Courier New', Courier, monospace;
-    
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(29, 151, 221, 0.536));
-                border-bottom: 0.6px solid rgb(229, 20, 20);
+            background: linear-gradient(90deg, rgba(29, 151, 221, 0.536), rgba(233, 35, 35, 0.8));
+            border-bottom: 0.6px solid rgb(229, 20, 20);
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-        header h1{
-            font-size: 3rem;
+        
+        header h1 {
+            font-size: clamp(2rem, 8vw, 3.7rem);
             font-style: italic;
-            color: rgb(230, 30, 26);
+            color: rgb(29, 186, 221);
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin: 10px 0;
+            text-align: center;
         }
+        
         nav {
             display: flex;
-            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
         }
+        
         nav a {
             text-decoration: none;
             color: rgb(250, 250, 250);
-            font-size: 1.3rem;
-            padding: 5px 15px;
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            padding: 5px 10px;
             border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s;
+            white-space: nowrap;
         }
+        
         nav a:hover {
             color: rgb(5, 42, 66);
             background-color: rgb(0, 0, 0);
         }
+        
         nav .menu {
             position: relative;
         }
+        
         nav .dropdown {
             display: none;
             position: absolute;
-                top: 100%;
+            top: 100%;
             left: 0;
-                    background: rgba(5, 42, 66, 0.9);
+            background: rgba(5, 42, 66, 0.9);
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            min-width: 150px;
+            z-index: 1000;
         }
+        
         nav .menu:hover .dropdown {
             display: block;
         }
+        
         nav .dropdown a {
             display: block;
-            padding: 10px 20px;
+            padding: 10px 15px;
             color: white;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            white-space: nowrap;
         }
+        
         nav .dropdown a:hover {
-            background-color: rgb(212, 212, 15);
+            background-color: rgb(15, 212, 189);
             color: black;
         }
-        main {
+        
+        .main-content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 50px 20px;
+            padding: 20px;
             text-shadow: 2px 2px 5px rgba(158, 68, 68, 0.7);
             position: relative;
         }
-        main h2 {
-            font-size: 2.5rem;
+        
+        .main-content h2 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             font-family: cursive;
+            margin-bottom: 15px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        
+        .main-content p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
             margin-bottom: 20px;
-            color: black;
+            color: white;
+            line-height: 1.5;
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
         }
-        main p {
-            font-size: 1.2rem;
-                margin-bottom: 400px;
-            color: black;
-        }
+        
         .character-section {
-            padding: 50px 20px;
+            padding: 40px 20px;
             background-color: rgba(0, 0, 0, 0.9);
+            position: relative;
         }
+        
         .character-section h2 {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            margin-bottom: 30px;
+            color: white;
         }
+        
         .characters {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-            .character-card {
+        
+        .character-card {
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             overflow: hidden;
@@ -116,113 +163,227 @@
             box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.7);
             transition: transform 0.3s;
         }
+        
         .character-card:hover {
-            transform: translateY(-40px);
+            transform: translateY(-10px);
         }
+        
         .character-card img {
             width: 100%;
-            border-radius: 15px;
-        }
-        .character-card h3 {
-            font-size: 1.5rem;
-            margin: 10px 0;
-            color: white;
-        }
-            .character-card p {
-            font-size: 1.1rem;
-            color: rgb(200, 200, 200);
-        }
-        footer {
-            background-color: rgba(5, 42, 66, 0.95);
-                padding: 40px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 20px;
-            color: rgb(248, 249, 249);
-        }
-        footer .contact, footer .links, footer .social {
-            text-align: center;
-        }
-        footer h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        footer p, footer a {
-            font-size: 1.1rem;
-            margin: 5px 0;
-            color: white;
-            text-decoration: none;
-        }
-        footer a:hover {
-            color: rgb(212, 212, 15);
-        }
-        .social-icons {
-            display: flex;
-                justify-content: center;
-            gap: 15px;
-                margin-top: 10px;
-        }
-        .social-icons img {
-            width: 30px;
-                height: 30px;
-        }    
-        .moving-text {
-            width: 100%;
-                background: rgba(150, 75, 75, 0.688);
-                padding: 8.6px 0;
-            font-size: 1.5rem;
-                    font-weight: bold;
-            color: rgb(18, 16, 16);
-            text-align: center;
-                position: relative;
-            /* animation: moveText 10s linear infinite; */
-        }
-        /* @keyframes moveText {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        } */
-        .side-gifs {
-            position: absolute;
-            top: 65%;
-            transform: translateY(-50%);
-            display: flex;
-                justify-content: space-between;
-            width: 100%;
-                    padding: 0 50px;
-        }
-        .side-gifs img {
-            width: 300px;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+        
+        .character-card h3 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin: 15px 0 10px;
+            color: white;
+        }
+        
+        .character-card p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: rgb(200, 200, 200);
+            line-height: 1.4;
+        }
+        
+        footer {
+            background-color: rgba(144, 66, 66, 0.545);
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: rgb(248, 249, 249);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .contact {
+            text-align: center;
+            color: white;
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .contact h3 {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            margin-bottom: 15px;
+        }
+        
+        .contact p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin: 5px 0;
+        }
+        
+        .rikka-img {
+            width: clamp(100px, 20vw, 150px);
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .moving-text {
+            width: 100%;
+            background: rgba(150, 75, 75, 0.688);
+            padding: 10px 0;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: bold;
+            color: rgb(18, 16, 16);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+            
+            nav.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+                align-self: flex-end;
+            }
+            
+            .menu {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .dropdown {
+                position: static;
+                width: 100%;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .characters {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .rikka-img {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .characters {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .character-card {
+                padding: 15px;
+            }
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.2rem;
+            animation: bounce 2s infinite;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .scroll-indicator span {
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+        
+        .scroll-indicator i {
+            margin-top: 5px;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="moving-text">Click here to follow us on news and updates</div>
-            <header>
+    <header>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <h1>Jujutsu Kaisen</h1>
-        <nav>
-                    <div class="menu">
+        <nav id="mainNav">
+            <div class="menu">
                 <a href="#">Major Plots</a>
                 <div class="dropdown">
-                            <a href="#">Plot 1</a>
-                        <a href="#">Plot 2</a>
+                    <a href="#">Plot 1</a>
+                    <a href="#">Plot 2</a>
                     <a href="#">Plot 3</a>
-                    </div>
-                        </div>
+                </div>
+            </div>
             <div class="menu">
-                    <a href="#">Iconic Scenes</a>
+                <a href="#">Iconic Scenes</a>
                 <div class="dropdown">
                     <a href="#">Scene 1</a>
                     <a href="#">Scene 2</a>
                     <a href="#">Scene 3</a>
                 </div>
-                </div>
+            </div>
             <div class="menu">
                 <a href="#">Chapterwise Summary</a>
                 <div class="dropdown">
@@ -236,92 +397,136 @@
                 <div class="dropdown">
                     <a href="#">Twist 1</a>
                     <a href="#">Twist 2</a>
-                        <a href="#">Twist 3</a>
-                 </div>
-                     </div>
-            </nav>
-            </header>
-    <main>
-        <div class="side-gifs">
-            <img src="https://i.pinimg.com/originals/c3/e1/e4/c3e1e47113a4bea928309e341b245dac.gif" alt="Left Side GIF">
-            <img src="https://i.pinimg.com/originals/a5/46/63/a5466327439c91d28f889a75846434ea.gif" alt="Right Side GIF">
-        </div>
+                    <a href="#">Twist 3</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="main-content">
         <h2>Welcome to the Ultimate Jujutsu Kaisen Fan Website</h2>
-            <p>Explore the world of sorcerers, cursed spirits, and the unforgettable moments that make Jujutsu Kaisen a masterpiece.</p>
-        </main>
+        <p>Explore the world of sorcerers, cursed spirits, and the unforgettable moments that make Jujutsu Kaisen a masterpiece. From the intense battles to the deep character development, this series has captivated fans worldwide with its unique blend of supernatural action and emotional storytelling.</p>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+            <span>Scroll to view characters</span>
+        </div>
+    </div>
+    
     <section class="character-section">
         <h2>Characters</h2>
         <div class="characters">
             <div class="character-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNX8ZHtKK0pikDXRna3L-r5Z8RPFqGMmuNQQ&s" alt="Yuji Itadori">
                 <h3>Yuji Itadori</h3>
-                <p>The protagonist with immense physical strength and a kind heart.</p>
+                <p>The protagonist with immense physical strength and a kind heart who becomes the vessel for Ryomen Sukuna.</p>
             </div>
-                <div class="character-card">
+            <div class="character-card">
                 <img src="https://i.pinimg.com/736x/a4/61/da/a461da77001b2e4c94f9bcd9e81394fe.jpg" alt="Satoru Gojo">
                 <h3>Satoru Gojo</h3>
-                    <p>The most powerful Jujutsu Sorcerer.</p>
+                <p>The most powerful Jujutsu Sorcerer, known for his Limitless technique and Six Eyes ability.</p>
             </div>
             <div class="character-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOl6KfNFxY_XDQ6hU4ovJiEIZUxISSTP13hw&s" alt="Megumi Fushiguro">
                 <h3>Megumi Fushiguro</h3>
-                <p>A skilled sorcerer who uses Shikigami techniques.</p>
+                <p>A skilled sorcerer who uses Shikigami techniques and is from the prestigious Zenin family.</p>
             </div>
             <div class="character-card">
                 <img src="https://i.scdn.co/image/ab67616d0000b273c116a6ea48303f77dd440348" alt="Nobara Kugisaki">
                 <h3>Nobara Kugisaki</h3>
-                <p>A strong-willed sorcerer with a unique hammer-and-nails fighting style.</p>
+                <p>A strong-willed sorcerer with a unique hammer-and-nails fighting style and no patience for nonsense.</p>
             </div>
             <div class="character-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKvenwjhEs9C-6vgLCR-hJU3OP3fI16SKClw&s" alt="Ryomen Sukuna">
-                    <h3>Ryomen Sukuna</h3>
-                <p>The King of Curses, a fearsome and ancient spirit.</p>
+                <h3>Ryomen Sukuna</h3>
+                <p>The King of Curses, a fearsome and ancient spirit with unimaginable power residing within Yuji.</p>
             </div>
             <div class="character-card">
                 <img src="https://cdn.rafled.com/anime-icons/images/d37f235d4d89d50e674843821c3ad17aba87a6f7b8a7e9f6cc6d5183d1d72b36.jpg" alt="Maki Zenin">
                 <h3>Maki Zenin</h3>
-                <p>A non-sorcerer who defies her clan and wields powerful cursed tools.</p>
+                <p>A non-sorcerer who defies her clan and wields powerful cursed tools with incredible skill.</p>
             </div>
             <div class="character-card">
                 <img src="https://i.pinimg.com/736x/40/89/bf/4089bf2282151314b749eee0ca9da5b1.jpg" alt="Panda">
                 <h3>Panda</h3>
-                <p>An adorable but incredibly strong Cursed Corpse.</p>
+                <p>An adorable but incredibly strong Cursed Corpse who is actually a third-year student at Tokyo Jujutsu High.</p>
             </div>
             <div class="character-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXPMO6zWOMO4o0o_4Uu9jeU43jMERjtizZyw&s" alt="Toge Inumaki">
                 <h3>Toge Inumaki</h3>
-                <p>A sorcerer who uses cursed speech to command others.</p>
+                <p>A sorcerer who uses cursed speech to command others, speaking only in rice ball ingredients to avoid accidental curses.</p>
             </div>
             <div class="character-card">
-                <img src="https://jujutsu-kaisen.fandom.com/wiki/Category%3AYuta_Okkotsu_Images" alt="Yuta Okkotsu">
+                <img src="https://i.pinimg.com/736x/9a/39/c8/9a39c85f9d87740dd04fd04aeb9d0d9e.jpg" alt="Yuta Okkotsu">
                 <h3>Yuta Okkotsu</h3>
-                <p>A special-grade sorcerer with unparalleled potential and Rika's spirit.</p>
+                <p>A special-grade sorcerer with unparalleled potential and Rika's spirit, featured in the prequel movie.</p>
             </div>
             <div class="character-card">
                 <img src="https://i.redd.it/v3z52f799xud1.jpeg" alt="Kento Nanami">
                 <h3>Kento Nanami</h3>
-                <p>A reliable and pragmatic sorcerer with a strong sense of duty.</p>
+                <p>A reliable and pragmatic sorcerer with a strong sense of duty who uses a ratio-based technique with his blunt sword.</p>
             </div>
             <div class="character-card">
-                <img src="https://jujutsu-kaisen.fandom.com/wiki/Category%3AHanami_Images" alt="Hanami">
+                <img src="https://i.pinimg.com/736x/33/1f/b9/331fb9997c417c8de92616bef8c2de2f.jpg" alt="Hanami">
                 <h3>Hanami</h3>
-                <p>A nature-aligned curse spirit with immense power.</p>
+                <p>A nature-aligned curse spirit with immense power who seeks to eliminate humanity to restore nature's balance.</p>
             </div>
             <div class="character-card">
-                <img src="https://jujutsu-kaisen.fandom.com/wiki/Category%3AMahito_Images" alt="Mahito">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0hF-CZ2MYutf4XOTpiYk0_kI7qV0YdirK2g&s" alt="Mahito">
                 <h3>Mahito</h3>
-                <p>A sadistic curse spirit capable of manipulating souls.</p>
+                <p>A sadistic curse spirit capable of manipulating souls, representing the darkness in human hearts.</p>
             </div>
         </div>
     </section>
-    <footer style="background-color: black; padding: 80px 20px;">
-        <div class="contact" style="text-align: center; color: white;">
-            <h3>Contact Us</h3>
-            <p>Email: contact@jujutsukaisenfansite.com</p>
-            <p>Phone: +1 234 567 890</p>
-            <p>Address: 123 Anime Street, Tokyo, Japan</p>
+    
+    <footer>
+        <div class="footer-content">
+            <img class="rikka-img" src="https://media.tenor.com/1rkyTODR2qQAAAAi/rikka-takanashi-takanashi-rikka.gif" 
+                 alt="Rikka Takanashi" 
+                 style="transform: rotate(180deg);">
+            
+            <div class="contact">
+                <h3>Contact Us</h3>
+                <p>Email: contact@jujutsukaisenfansite.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: Anime Street, Tokyo, Japan</p>
+            </div>
+            
+            <img class="rikka-img" src="https://media.tenor.com/1rkyTODR2qQAAAAi/rikka-takanashi-takanashi-rikka.gif" 
+                 alt="Rikka Takanashi">
         </div>
     </footer>
     
+    <script>
+        // Mobile menu toggle functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        // Close dropdowns when clicking elsewhere
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.menu')) {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                });
+            }
+        });
+        
+        // Hide scroll indicator when scrolling
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.visibility = 'hidden';
+            } else {
+                scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.visibility = 'visible';
+            }
+        });
+    </script>
 </body>
 </html>
