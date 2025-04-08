@@ -368,36 +368,37 @@
         </div>
         <h1>Jujutsu Kaisen</h1>
         <nav id="mainNav">
+            <a href="index.html">Home</a>
             <div class="menu">
-                <a href="#">Major Plots</a>
+                <a href="major-plots.html">Major Plots</a>
                 <div class="dropdown">
-                    <a href="#">Plot 1</a>
-                    <a href="#">Plot 2</a>
-                    <a href="#">Plot 3</a>
+                    <a href="major-plots.html#shibuya">Shibuya Incident</a>
+                    <a href="major-plots.html#hidden-inventory">Hidden Inventory</a>
+                    <a href="major-plots.html#culling-game">Culling Game</a>
                 </div>
             </div>
             <div class="menu">
-                <a href="#">Iconic Scenes</a>
+                <a href="iconic-scenes.html">Iconic Scenes</a>
                 <div class="dropdown">
-                    <a href="#">Scene 1</a>
-                    <a href="#">Scene 2</a>
-                    <a href="#">Scene 3</a>
+                    <a href="iconic-scenes.html#gojo-unveiled">Gojo's Unveiling</a>
+                    <a href="iconic-scenes.html#yuji-sukuna">Yuji vs Sukuna</a>
+                    <a href="iconic-scenes.html#nobara-mahito">Nobara vs Mahito</a>
                 </div>
             </div>
             <div class="menu">
-                <a href="#">Chapterwise Summary</a>
+                <a href="chapterwise-summary.html">Chapterwise Summary</a>
                 <div class="dropdown">
-                    <a href="#">Chapter 1</a>
-                    <a href="#">Chapter 2</a>
-                    <a href="#">Chapter 3</a>
+                    <a href="chapterwise-summary.html#season1">Season 1</a>
+                    <a href="chapterwise-summary.html#season2">Season 2</a>
+                    <a href="chapterwise-summary.html#manga">Manga Arcs</a>
                 </div>
             </div>
             <div class="menu">
-                <a href="#">Twists</a>
+                <a href="twists.html">Twists</a>
                 <div class="dropdown">
-                    <a href="#">Twist 1</a>
-                    <a href="#">Twist 2</a>
-                    <a href="#">Twist 3</a>
+                    <a href="twists.html#gojo-sealed">Gojo Sealed</a>
+                    <a href="twists.html#yuji-death">Yuji's Death</a>
+                    <a href="twists.html#megumi-sister">Megumi's Sister</a>
                 </div>
             </div>
         </nav>
@@ -497,6 +498,12 @@
         </div>
     </footer>
     
-  
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
